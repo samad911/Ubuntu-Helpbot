@@ -2,7 +2,7 @@ import time
 import subprocess
 import random
 import os
-import alsaaudio #You need to add this little program for working with audios or you'll see error
+#import alsaaudio #You need to add this little program for working with audios or you'll see error
 i1 = open('/home/syed/ironica_commands.dat', 'r')#Commands To be Checked
 i2 = open('/home/syed/return_notes.dat', 'r') #Return Notes
 i3 = open('/home/syed/sub_cmd.dat', 'r') #Return Notes
