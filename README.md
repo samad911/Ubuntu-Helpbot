@@ -6,6 +6,14 @@ You need a good knowldge of python to understand the commands and stuff.
 
 This Little program has the ability to launch apps by just typing a simple keyword or for example tell you time through text to speech engine called eSpeak
 
+Dependencies:
+
+alsaaudio
+
+You can install alsaaudio by typing this in the teriminal:
+
+sudo apt-get install alsaaudio
+
 It can do other cool stuff but it is in it's Beta form so it lags some stuff , im a loking forward to people who can help me building the program better.
 Some to the abilities of the program are still in development but little of it's code is still present , so if you get a akward looking function in the program which is of no use please ignore them cause it might be in it's beta stage more or less it will have a UD  comment in it for example the directory is not fully functional yet.'
 Some of the collting it can do it start music player by just typing 'go music' or firefox by just typing 'go firefox'.
