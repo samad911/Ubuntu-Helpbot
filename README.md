@@ -1,5 +1,6 @@
 # Ubuntu-Helpbot
 A simple help bot for Linux (Specially for Ubuntu).
+
 The program is not Cross Platform , but you are welcome to modify it's commands for Windows or mac. It's not very difficult you just have to change the commands which are send to the subprocess function.
 You need a good knowldge of python to understand the commands and stuff.
 This Little program has the ability to lauch apps by just typing a simple keyword or for example tell you time through text to speech engine called eSpeak
