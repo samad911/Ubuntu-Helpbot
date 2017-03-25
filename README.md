@@ -4,6 +4,25 @@ A simple help bot for Linux (Specially for Ubuntu).
 The program is not Cross Platform , but you are welcome to modify it's commands for Windows or mac. It's not very difficult you just have to change the commands which are send to the subprocess function.
 You need a good knowldge of python to understand the commands and stuff.
 
+V 1.2 - Red Queen
+
+Dependencies:
+
+alsaaudio
+pyaudio
+wave
+pyglet
+speech_recognition
+
+
+This version includes Speech Recognition and Voice Activated triggering.
+Further updates are made.
+
+Complete Documentation is pending of this version , will be updated soon!
+
+
+V1- Brashi , This readme is for V1 only!
+
 This Little program has the ability to launch apps by just typing a simple keyword or for example tell you time through text to speech engine called eSpeak
 
 Dependencies:
