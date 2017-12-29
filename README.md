@@ -31,7 +31,9 @@ alsaaudio
 
 You can install alsaaudio by typing this in the teriminal:
 
-sudo apt-get install alsaaudio
+$ sudo apt-get update
+
+$ sudo apt-get install python-alsaaudio
 
 It can do other cool stuff but it is in it's Beta form so it lags some stuff , im a loking forward to people who can help me building the program better.
 Some to the abilities of the program are still in development but little of it's code is still present , so if you get a akward looking function in the program which is of no use please ignore them cause it might be in it's beta stage more or less it will have a UD  comment in it for example the directory is not fully functional yet.'
