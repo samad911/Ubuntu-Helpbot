@@ -1,7 +1,8 @@
 # Ubuntu-Helpbot
 A simple help bot for Linux based operating systems. (Designed in Ubuntu).
 
-This Little program has the ability to launch apps by just typing a simple keyword or for example tell you time through text to speech engine called eSpeak.
+It can run programs, tell you time , play/stop/pause music , increase/dec.. volume etc by just coupling the command with the hot word.
+e.g * Red Queen play some music *
 
 The program is not Cross Platform , but you are welcome to modify it's commands for Windows or Mac, as it's not very difficult since you just have to change the commands which are send to the subprocess function.
 
