@@ -1,12 +1,15 @@
+# ONI(c) | Project Red Quen
+# Functions Container for  Project Red Qqueen
+# ONI Corporation Limited
 import time
 import subprocess
 import random
 import os
-#import alsaaudio #You need to add this little program for working with audios or you'll see error
-i1 = open('/home/syed/ironica_commands.dat', 'r')#Commands To be Checked
-i2 = open('/home/syed/return_notes.dat', 'r') #Return Notes
-i3 = open('/home/syed/sub_cmd.dat', 'r') #Return Notes
-i4 = open('/home/syed/dir.dat').read().lower().split()
+#import alsaaudio & xbacklight #You need to add this little program for working with audios or you'll see error
+i1 = open('ironica_commands.dat', 'r')#Commands To be Checked
+i2 = open('return_notes.dat', 'r') #Return Notes
+i3 = open('sub_cmd.dat', 'r') #Return Notes
+i4 = open('dir.dat').read().lower().split()
 #----------------------------------------------------
 split_cmd = i1.read().split('&')#Splitting Commands to be checked
 splitted_notes = i2.read().split('&')#Splitting Commands to be checked
@@ -77,7 +80,7 @@ def increase_any(z):
 def decrease_any(z):
     if 'vol' in z or 'volume' in z:
         speak('I have reduced the system volume by 10% sir,')
-        subprocess.call( "amixer -D pulse sset Master 10%-", shell=True ) #Increase volume by 10%
+        subprocess.call( "amixer -D pulse sset Master 10%-", shell=True ) #Decrease volume by 10%
     elif 'birghtness' in z or 'screen' in z:
         subprocess.call(['xbacklight','-dec 10'])
 def set_(z):
@@ -160,3 +163,53 @@ def els(z):
     else:
         rnd = random.randint(0,5)
         speak(sorry_notes[rnd])
+
+
+def start_(z):
+    if any(i in z for i in do_not):
+        speak('Okay sir , i will not do it.')
+    elif any(i in z for i in audio):
+        speak('Anything for you Sir.')
+        subprocess.call(["rhythmbox-client", "--play"]) #rhythmbox START
+    elif 'vlc' in z:
+        speak('Starting vlc media player for you sir!')
+        subprocess.Popen(['vlc'])
+    elif 'rhythmbox' in z:
+        speak('rhythm box started sir')
+        subprocess.Popen(['rhythmbox'])
+    elif 'notepad' in z or 'gedit' in z:
+        speak('There you go sir')
+        subprocess.Popen('gedit')
+    elif 'firefox' in z or 'web' in z or 'browser' in z:
+        speak('Executing firefox sir')
+        subprocess.Popen('firefox')
+        time.sleep(3)
+        speak('There you go sir')
+    elif 'home' in z or 'computer' in z:
+        speak('File manager navigated to home sir')
+        subprocess.Popen('nautilus')
+    elif 'uget' in z or 'download manager' in  z:
+        speak('Starting Uget sir')
+        subprocess.Popen('uget-gtk')
+    elif 'ik' in z:
+        subprocess.Popen(['vlc','/home/syed/Music/ik.xspf'])
+    else:
+        speak('please specify what do you want to start sir')
+        
+def stopcmd(z):
+    if any(i in z for i in audio):
+        subprocess.call(["rhythmbox-client", "--pause"])#rhythmbox STOP
+    elif 'vlc' in z:
+        subprocess.call(['killall','vlc'])
+    elif 'rhythmbox' in z:
+        subprocess.call(['killall','rhythmbox'])
+    elif 'notepad' in z or 'gedit' in z:
+        subprocess.call(['killall','gedit'])
+    elif 'firefox' in z or 'web' in z or 'browser' in z:
+        subprocess.call(['killall','firefox'])
+    elif 'home' in z or 'computer' in z:
+        subprocess.call(['killall','nautilus'])
+    elif 'uget' in z or 'download manager' in z:
+        subprocess.call(['killall','uget-gtk'])
+    else:
+        speak('please specify what do you want to stop sir')
